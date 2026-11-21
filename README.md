@@ -37,4 +37,6 @@ To build a signed release, copy [keystore.properties.example](keystore.propertie
 
 ## License
 
-[MIT License](LICENSE).
+The original Android implementation of APlatformIndicators for Microcord is licensed under MIT. Copyright © 2026 Maarij (mmaarij123). You may use, copy, modify, and redistribute the code, including for commercial use. Include the copyright notice and permission notice with copies or substantial portions of the code. The code is provided as is, without warranty. The full terms include a limitation of liability. [Read the MIT license](LICENSE)
+
+See the notices for Strencher’s BetterDiscord plugin and the components used by the Android port. [Third-party notices](THIRD_PARTY_NOTICES.md)
