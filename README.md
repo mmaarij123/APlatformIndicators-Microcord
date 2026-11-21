@@ -1,29 +1,40 @@
 # APlatformIndicators for Microcord
 
-A native Android port of Strencher’s [APlatformIndicators for BetterDiscord](https://github.com/Strencher/BetterDiscordStuff/blob/master/PlatformIndicators/APlatformIndicators.plugin.js). The Android project follows the [Microcord plugin template](https://github.com/microcord/plugin-template).
+See which Discord clients someone is using while reading chat or viewing their profile. This is a Microcord port of [Strencher’s APlatformIndicators for BetterDiscord](https://github.com/Strencher/BetterDiscordStuff/blob/master/PlatformIndicators/APlatformIndicators.plugin.js).
+
+## What it shows
+
+- **Chat headers** show platform icons on the message author’s line.
+- **User profiles** show the icons inside Microcord’s badge pill alongside Discord badges. The pill also appears when platform icons are the only badges.
+- **Platforms** include desktop, mobile, and web when Microcord has presence for the user. Your own Discord sessions can also show console and VR when reported.
+- **Status colors** show online in green, idle in amber, and Do Not Disturb in red. Your own streaming activity uses purple. Offline and invisible sessions are hidden.
+
+Both placements are enabled by default. Plugin settings let you choose which platforms appear in each placement. Bots are hidden by default.
 
 ## Install
 
-1. Open the plugin APK on the Android device and install it.
-2. Open **Microcord Settings > Plugins**, enable **Load Plugins** if needed, and enable **APlatformIndicators**. Approve the signing certificate if Microcord prompts.
-3. Open the plugin settings to control the chat header and profile badge placements, select platforms, or show indicators for bots. Both placements are on by default. Bots are hidden by default.
+1. Download the file ending in `-debug.apk` from the [latest GitHub release](https://github.com/mmaarij123/APlatformIndicators-Microcord/releases/latest).
+2. Open the APK on your Android device and install it.
+3. Open **Microcord Settings → Plugins**, turn on **Load Plugins** if needed, and enable **APlatformIndicators**. Approve the signing certificate if Microcord prompts.
 
-If you installed v1.1.0 or earlier, uninstall the old plugin APK before installing v1.1.1. Android treats `io.github.mmaarij123.aplatformindicators` as a separate app from the previous package.
+If you installed v1.1.0 or earlier, uninstall the old plugin before installing the latest APK. The Android package name changed in v1.1.1.
 
-## What it displays
+## Build from source
 
-- Status-colored icons on the author line in chat and inside Microcord's native profile badge pill. On profiles without Discord badges, platform icons can fill the pill on their own.
-- Desktop, mobile, and web when Microcord has presence data for the user. For your own account, indicators come from the Discord sessions delivered to Microcord, including console and VR when reported.
-- Online, idle, and Do Not Disturb colors, plus a streaming color when Microcord detects your own streaming activity. Offline and invisible clients are hidden.
+The plugin is written in Kotlin and follows the [Microcord plugin template](https://github.com/microcord/plugin-template). It compiles against Microcord Plugin SDK 1.0.6 and uses the host’s presence and session data. The profile badges use Microcord’s native profile header layout.
 
-Version 1.1.0 moves the old **Active platforms** section into the badge pill. It uses the profile header layout and IDs present in the Microcord SDK used by the template. If a Microcord build changes that layout, its chat placement remains available. The avatar, friends, server member, DM, and favorites placements require additional host hooks. Microcord’s presence model for other users exposes desktop, mobile, and web.
+Use JDK 21, Android SDK Platform 36.1, and Build Tools 36.0.0. Set `ANDROID_HOME` or create a `local.properties` file with `sdk.dir` pointing to your Android SDK.
 
-## Build
-
-Use JDK 21 and Android SDK Platform 36.1 with Build Tools 36.0.0. Set `ANDROID_HOME` or create a `local.properties` file with `sdk.dir` pointing to your SDK. From the project directory, run:
+On Windows, run this from the project directory.
 
 ```powershell
 .\gradlew.bat assembleDebug
 ```
 
-On macOS or Linux, run `./gradlew assembleDebug`. The APK is written to `build/outputs/apk/debug/`. For a release build, fill in a local `keystore.properties` from the example and run `assembleRelease`. Reuse the same signing key when distributing updates.
+On macOS or Linux, run `./gradlew assembleDebug`. Gradle writes the APK to `build/outputs/apk/debug/`.
+
+To build a signed release, copy [keystore.properties.example](keystore.properties.example) to `keystore.properties`, fill in your signing details, and run the `assembleRelease` Gradle task. Use the same signing key for updates you distribute.
+
+## License
+
+[MIT License](LICENSE).
