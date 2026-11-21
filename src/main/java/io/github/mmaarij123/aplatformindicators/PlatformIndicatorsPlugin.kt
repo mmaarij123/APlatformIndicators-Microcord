@@ -1,4 +1,4 @@
-package com.platformindicators.microcord
+package io.github.mmaarij123.aplatformindicators
 
 import android.app.Service
 import android.content.Intent

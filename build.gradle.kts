@@ -12,7 +12,7 @@ val releaseSigning = Properties().apply {
 
 manticordPlugin {
     id.set("platformindicators")
-    entrypoint.set("com.platformindicators.microcord.PlatformIndicatorsPlugin")
+    entrypoint.set("io.github.mmaarij123.aplatformindicators.PlatformIndicatorsPlugin")
     description.set("Shows active Discord client platforms in chat and in the profile badge row")
     manticordVersionMinimum.set(1)
     manticordVersionMaximumExclusive.set(2)
@@ -21,7 +21,7 @@ manticordPlugin {
 }
 
 android {
-    namespace = "com.platformindicators.microcord"
+    namespace = "io.github.mmaarij123.aplatformindicators"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -29,11 +29,11 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.platformindicators.microcord"
+        applicationId = "io.github.mmaarij123.aplatformindicators"
         minSdk = 23
         targetSdk = 36
-        versionCode = 2
-        versionName = "1.1.0"
+        versionCode = 3
+        versionName = "1.1.1"
     }
 
     signingConfigs {

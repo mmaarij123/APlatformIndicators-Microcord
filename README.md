@@ -8,6 +8,8 @@ A native Android port of Strencher’s [APlatformIndicators for BetterDiscord](h
 2. Open **Microcord Settings > Plugins**, enable **Load Plugins** if needed, and enable **APlatformIndicators**. Approve the signing certificate if Microcord prompts.
 3. Open the plugin settings to control the chat header and profile badge placements, select platforms, or show indicators for bots. Both placements are on by default. Bots are hidden by default.
 
+If you installed v1.1.0 or earlier, uninstall the old plugin APK before installing v1.1.1. Android treats `io.github.mmaarij123.aplatformindicators` as a separate app from the previous package.
+
 ## What it displays
 
 - Status-colored icons on the author line in chat and inside Microcord's native profile badge pill. On profiles without Discord badges, platform icons can fill the pill on their own.

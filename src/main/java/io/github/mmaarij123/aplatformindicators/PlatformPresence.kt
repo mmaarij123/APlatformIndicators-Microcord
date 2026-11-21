@@ -1,4 +1,4 @@
-package com.platformindicators.microcord
+package io.github.mmaarij123.aplatformindicators
 
 import com.discord.api.activity.ActivityType
 import com.discord.api.presence.ClientStatus
